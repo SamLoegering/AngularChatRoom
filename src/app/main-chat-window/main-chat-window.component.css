@@ -1,0 +1,29 @@
+.login{
+    text-align: center;
+    border: 2px solid black;
+    margin: 0 0 0 0 ;
+}
+.textInput {
+    margin-right: 15px;
+}
+.col-6 .chatWindow {
+    border: 2px solid rgb(40, 87, 255);
+    margin-bottom: 10px;
+}
+.messagePanel {
+    text-align: center;
+}
+.btn-danger {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.btn-warning
+{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+input{
+    margin-right: 25px;
+}

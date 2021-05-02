@@ -1,0 +1,76 @@
+<div class="container" *ngIf="displayLoginEditor">
+  <div class="login">
+    <h1>Login screen enter a username</h1>
+    <input class="textInput" type="text" #userNameInput />
+    <button
+      class="btn btn-primary"
+      (click)="selectUserName(userNameInput.value)"
+    >
+      Choose this username
+    </button>
+  </div>
+</div>
+
+<div class="container" *ngIf="displayChat">
+  <div class="row">
+    <div class="col-3">
+      <div *ngFor="let l of locations">
+        <app-weather  [location]="l"></app-weather>
+      </div>
+      <app-add-bot *ngIf="showAddBot"></app-add-bot>
+    </div>
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="chatWindow">
+        <ol *ngFor="let messageToDisplay of arr">
+          <div #displayAllLoop>
+            <p>
+              {{ messageToDisplay.date | date: "shortTime" }}
+              {{ messageToDisplay.userName }}: {{ messageToDisplay.message }}
+            </p>
+          </div>
+        </ol>
+      </div>
+
+      <!-- if date display needs to be changed later here is a site explaining it 
+      https://www.angularjswiki.com/angular/angular-date-pipe-formatting-date-times-in-angular-with-examples/-->
+      <div class="messagePanel">
+        <div>
+          <input class="textInput" type="text" #messageInput />
+          <button
+            class="btn btn-primary"
+            (click)="sendMessage(messageInput.value)"
+          >
+            Send Message
+          </button>
+        </div>
+        <br />
+        <button class="btn btn-info" (click)="logout()">Logout</button>
+        <button class="btn btn-danger" (click)="delete()">
+          Delete all messages debug
+        </button>
+        <button class="btn btn-success" (click)="addBotButton()">
+          Show/Hide Add Bot
+        </button>
+        <button class="btn btn-warning" (click)="switchToEditScrn()">
+          Edit Weather
+        </button>
+        <div *ngIf = "isEdit">
+          <p style="color: red">{{ message || null }}</p>
+      
+          <div>
+            <input placeholder="Enter a location" #input type="text" />
+            <h1>{{ locdata.Location }}</h1>
+            <button style="background-color: lightblue">Edit</button>
+            <button style="background-color: red" (click)="onQuery()">Delete</button>
+          </div>
+          <br />
+          <br />
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div>
+</div>

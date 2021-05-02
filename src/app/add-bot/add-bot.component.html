@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <h1>Add a Bot</h1>
+        <h5>Bot Name:</h5> <input type="text" [(ngModel)] = "botName">
+        <h5>Bot Case:</h5> <input type="text" [(ngModel)] = "botCase">
+        <h5>Bot Response:</h5> <textarea name="botResponse" rows="4" cols="25" [(ngModel)] = "botResponse"></textarea>
+        <button class="btn btn-success" (click)="submitAdd()">Add</button>
+    </div>
+</div>
